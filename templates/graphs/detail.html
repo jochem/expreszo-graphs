@@ -1,0 +1,11 @@
+{% extends "graphs/base.html" %}
+
+{% block title %}<h3>{{ graph_type }}</h3>{% endblock %}
+
+{% block content %}
+  <a href="">&laquo; index</a>
+  <p><img src="{{ graph_type }}/1d.png" alt="{{ graph_type }}/1d.png"/></p>
+  <p><img src="{{ graph_type }}/1w.png" alt="{{ graph_type }}/1w.png"/></p>
+  <p><img src="{{ graph_type }}/1m.png" alt="{{ graph_type }}/1m.png"/></p>
+  <p><img src="{{ graph_type }}/1y.png" alt="{{ graph_type }}/1y.png"/></p>
+{% endblock %}
