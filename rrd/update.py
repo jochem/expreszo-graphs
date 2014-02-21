@@ -12,7 +12,7 @@ from settings import RRD_FILE as rrd_file, FORUM_URL as forum_url, datadir
 def update():
     log("Reading %s" % forum_url)
     req = Request(forum_url)
-    req.add_header("User-Agent", "Expreszo Grapher/1.3 (+http://expreszo.djangohost.nl/graphs/)")
+    req.add_header("User-Agent", "Expreszo Grapher/1.4 (+http://expreszo.djangohost.nl/graphs/)")
     try:
         response = urlopen(req)
     except URLError as e:
