@@ -2,11 +2,7 @@ import datetime
 import rrdtool
 from os import uname
 
-""" Settings """
-datadir = '/home/expreszo/graph/rrd/'
-datadir = '/home/expreszo/expreszo/graphs/data/'
-RRD_FILE = datadir + 'expreszo.rrd'
-FORUM_URL = 'http://www.expreszo.nl/forum/index.php'
+from settings import RRD_FILE, datadir
 
 
 class rrdgraph:
