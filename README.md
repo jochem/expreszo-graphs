@@ -7,5 +7,4 @@ Graphing tool for expreszo.nl
 * Could be used for creating graphs for any phpBB forum, just modify the parsing in update.py
 * It's currently running at http://expreszo.djangohost.nl/graphs/
 
-.. image:: https://travis-ci.org/jochem/expreszo-graphs.png
-  :target: https://travis-ci.org/jochem/expreszo-graphs
+[![Build Status](https://travis-ci.org/jochem/expreszo-graphs.png?branch=master)](https://travis-ci.org/jochem/expreszo-graphs)
