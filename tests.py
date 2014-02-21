@@ -24,9 +24,27 @@ class FlaskrTestCase(unittest.TestCase):
     def test_detail(self):
         rv = self.app.get('/graphs/visitors/')
         assert '<h3>visitors</h3>' in rv.data
+        rv = self.app.get('/graphs/nonexistent/')
+        assert '404' in rv.data
 
     def test_png(self):
         rv = self.app.get('/graphs/visitors/1d.png')
+        assert rv.content_type == 'image/png'
+        rv = self.app.get('/graphs/nonexistent/1d.png')
+        assert '404' in rv.data
+
+        rv = self.app.get('/graphs/visitors/100/1d.png')
+        assert rv.content_type == 'image/png'
+        rv = self.app.get('/graphs/visitors/3000/1d.png')
+        assert rv.content_type == 'image/png'
+
+        rv = self.app.get('/graphs/chat/1d.png')
+        assert rv.content_type == 'image/png'
+        rv = self.app.get('/graphs/members/1d.png')
+        assert rv.content_type == 'image/png'
+        rv = self.app.get('/graphs/posts/1d.png')
+        assert rv.content_type == 'image/png'
+        rv = self.app.get('/graphs/topics/1d.png')
         assert rv.content_type == 'image/png'
 
     def test_404(self):

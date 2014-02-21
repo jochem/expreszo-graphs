@@ -1,8 +1,10 @@
 from flask import Flask, abort, make_response, render_template
 from rrd.graph import rrdgraph
 
+from settings import DEBUG
+
 app = Flask(__name__)
-graph_types = ('visitors', 'chat', 'members', 'oposts', 'posts', 'topics')
+graph_types = ('visitors', 'chat', 'members', 'posts', 'topics')
 
 
 @app.route('/graphs/')
@@ -44,5 +46,5 @@ def page_not_found(error):
 
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = DEBUG
     app.run()
