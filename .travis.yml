@@ -3,7 +3,7 @@ python:
   - "2.7"
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get -y build-dep python-rrdtool
+  - sudo apt-get install -qq librrd-dev
 install:
   - pip install -r requirements.txt
   - pip install nose
