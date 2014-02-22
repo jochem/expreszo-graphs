@@ -1,7 +1,7 @@
 expreszo-graphs
 ===============
 
-[![Build Status](https://travis-ci.org/jochem/expreszo-graphs.png?branch=master)](https://travis-ci.org/jochem/expreszo-graphs) [![Coverage Status](https://coveralls.io/repos/jochem/expreszo-graphs/badge.png)](https://coveralls.io/r/jochem/expreszo-graphs)
+[![Build Status](https://travis-ci.org/jochem/expreszo-graphs.png?branch=master)](https://travis-ci.org/jochem/expreszo-graphs) [![Coverage Status](https://coveralls.io/repos/jochem/expreszo-graphs/badge.png)](https://coveralls.io/r/jochem/expreszo-graphs) [![Requirements Status](https://requires.io/github/jochem/expreszo-graphs/requirements.png?branch=master)](https://requires.io/github/jochem/expreszo-graphs/requirements/?branch=master)
 
 Graphing tool for expreszo.nl
 
