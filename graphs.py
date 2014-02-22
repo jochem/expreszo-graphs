@@ -1,10 +1,9 @@
 from flask import Flask, abort, make_response, render_template
 from rrd.graph import rrdgraph
 
-from settings import DEBUG
+from settings import DEBUG, graph_types
 
 app = Flask(__name__)
-graph_types = ('visitors', 'chat', 'members', 'posts', 'topics')
 
 
 @app.route('/graphs/')
