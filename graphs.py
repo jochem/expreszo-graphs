@@ -1,3 +1,5 @@
+from functools import wraps
+
 from flask import Flask, abort, make_response, render_template
 from rrd.graph import rrdgraph
 
@@ -7,14 +9,15 @@ app = Flask(__name__)
 
 
 def require_valid_graph(function):
-    def wrapper(graph_type):
+    @wraps(function)
+    def wrapper(graph_type, *args, **kwargs):
         if graph_type not in graph_types:
             abort(404)
-    return function
+        return function(graph_type, *args, **kwargs)
+    return wrapper
 
 
 @app.route('/graphs/')
-@require_valid_graph
 def index():
     return render_template('graphs/index.html')
 
