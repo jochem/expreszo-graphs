@@ -6,24 +6,29 @@ from settings import DEBUG, graph_types
 app = Flask(__name__)
 
 
+def require_valid_graph(function):
+    def wrapper(graph_type):
+        if graph_type not in graph_types:
+            abort(404)
+    return function
+
+
 @app.route('/graphs/')
+@require_valid_graph
 def index():
     return render_template('graphs/index.html')
 
 
 @app.route('/graphs/<graph_type>/')
+@require_valid_graph
 def detail(graph_type):
-    if not graph_type in graph_types:
-        abort(404)
     return render_template('graphs/detail.html', graph_type=graph_type)
 
 
 @app.route('/graphs/<graph_type>/<start>.png')
 @app.route('/graphs/<graph_type>/<int:width>/<start>.png')
+@require_valid_graph
 def png(graph_type, start=None, width=597):
-    if not graph_type in graph_types:
-        abort(404)
-
     if width < 107:
         width = 107
     elif width > 2000:
